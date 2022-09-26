@@ -1,0 +1,6 @@
+<form action="/create_review/" method="POST">
+    {% csrf_token %}
+    <label for="content">message</label>
+    <input type="text" id="content" name="content" />
+    <input type="submit" />
+</form>
