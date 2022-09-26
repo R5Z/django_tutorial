@@ -1,3 +1,4 @@
+{% extends 'base.html' %} {% block content %}
 <h1>오늘 {{name}}의 저녁은 {{pick.name}}!</h1>
 <h1>menu list</h1>
 <ul>
@@ -12,4 +13,4 @@
 <p>reasonable~</p>
 {% else %}
 <p>nice!</p>
-{% endif %}
+{% endif %} {% endblock %}
