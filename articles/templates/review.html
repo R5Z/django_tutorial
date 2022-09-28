@@ -1,6 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+
 <form action="{% url 'articles:create_review' %}" method="POST">
     {% csrf_token %}
-    <label for="content">message</label>
-    <input type="text" id="content" name="content" />
+    <label for="title">Title: </label>
+    <input class="form-contro" type="text" name="title" /><br />
+    <lable for="content">Content: </label>
+    <textarea class="form-control" name="content" col="30" rows="5"></textarea><br />
     <input type="submit" />
 </form>
+
+{% endblock %}

@@ -13,4 +13,12 @@
 <p>reasonable~</p>
 {% else %}
 <p>nice!</p>
-{% endif %} {% endblock %}
+{% endif %}
+
+<h1>review list</h1>
+{% for article in articles %}
+<p>글 번호: {{ article.pk }}</p>
+<p>글 제목: {{ article.title }}</p>
+<p>글 내용: {{ article.content }}</p>
+<hr />
+{% endfor %} {% endblock %}
