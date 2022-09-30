@@ -4,7 +4,11 @@ from articles import views
 app_name = 'articles'
 urlpatterns = [
     path('index/', views.index),
-    path('dinner/<str:name>/', views.dinner),
+    path('dinner/', views.dinner, name='dinner'),
     path('review/', views.review, name='review'),
     path('create_review/', views.create_review, name='create_review'), #추후 url변경이 있어도 괜찮음
+    path('<int:pk>/', views.detail, name='detail'), #글 넘버를 받아서 상세 페이지로 넘어가는 방식
+    path('<int:pk>/delete/', views.delete, name='delete'),
+    path('<int:pk>/edit/', views.edit, name='edit'),
+    path('<int:pk>/update/', views.update, name='update'),
 ]

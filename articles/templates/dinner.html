@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<h1>오늘 {{name}}의 저녁은 {{pick.name}}!</h1>
+<h1>오늘 님의 저녁은 {{pick.name}}!</h1>
 <h1>menu list</h1>
 <ul>
     {% for menu in menus %}
@@ -16,9 +16,11 @@
 {% endif %}
 
 <h1>review list</h1>
+<a href="{% url 'articles:review' %}">[submit review]</a>
 {% for article in articles %}
 <p>글 번호: {{ article.pk }}</p>
 <p>글 제목: {{ article.title }}</p>
 <p>글 내용: {{ article.content }}</p>
+<a href="{% url 'articles:detail' article.pk %}">[detail]</a>
 <hr />
 {% endfor %} {% endblock %}
